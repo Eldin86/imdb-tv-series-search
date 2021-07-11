@@ -8,10 +8,10 @@ import Movie from './pages/Movie'
 const App = () => {
   return (
     <Router>
-      <main>
+      <>
         <Route exact path="/" component={MoviesList}/>
         <Route path="/movie/:id" component={Movie}/>
-      </main>
+      </>
     </Router>
   );
 }
