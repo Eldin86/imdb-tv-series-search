@@ -1,0 +1,38 @@
+.cast img {
+    width: 65px;
+    height: auto
+}
+.load-actors-btn{
+    border: 2px solid #F5C518;
+    background: transparent;
+    color: #F5C518
+}
+.load-actors-btn:hover{
+    border: 2px solid #ffffff;
+    background: #000000;
+    color: #ffffff
+}
+.load-actors-btn:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    border: 2px solid #F5C518;
+}
+
+.back-btn{
+    background: #343a40;
+    color: #F5C518
+}
+.back-btn:hover{
+    text-decoration: none;
+    background-color: #343a40;
+    color: #F5C518
+}
+
+.back-btn:hover .fa-arrow-left{
+    transform: translateX(-5px);
+    transition: 1s;
+}
+.back-btn:not(:hover) .fa-arrow-left{
+    transform: translateX(0);
+    transition: 1s;
+}
