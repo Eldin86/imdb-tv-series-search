@@ -16,7 +16,7 @@ const Movie = () => {
 
     useEffect(() => {
         setLoading(true)
-        axios.get(`https://imdb-api.com/en/API/Title/k_rxe28h8u/${id}/FullActor,Ratings`)
+        axios.get(`${process.env.REACT_APP_API_URL}/Title/${process.env.REACT_APP_API_KEY}/${id}/FullActor,Ratings`)
             .then(res => {
                 setLoading(false)
                 setActors(res.data.actorList)
@@ -77,9 +77,6 @@ const Movie = () => {
                             <hr />
                             <h5>Full Cast &amp; Crew</h5>
                             <div className="cast">
-                                {/* {
-                                    JSON.stringify(actors)
-                                } */}
                                 <hr />
                                 {
                                     !loading && data.actorList && data.actorList.slice(0, loadActors).map(a => {

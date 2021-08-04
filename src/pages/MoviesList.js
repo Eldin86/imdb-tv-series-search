@@ -16,7 +16,7 @@ const MoviesList = () => {
         let timeout
         if (keyword) {
             setTimeout(() => {
-                axios.get(`https://imdb-api.com/en/API/SearchSeries/k_rxe28h8u/${keyword}`)
+                axios.get(`${process.env.REACT_APP_API_URL}/SearchSeries/${process.env.REACT_APP_API_KEY}/${keyword}`)
                     .then(res => {
                         setLoading(false)
                         setMovies(res.data)
@@ -53,7 +53,7 @@ const MoviesList = () => {
                     {
                         !loading && movies.results && movies.results.map(movie => {
                             return (
-                                <Col sm={4} md={6} lg={4}>
+                                <Col key={movie.id} sm={4} md={6} lg={4}>
                                     <CardListItem movie={movie} />
                                 </Col>
                             )
