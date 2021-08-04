@@ -30,6 +30,13 @@ const MoviesList = () => {
         return () => clearTimeout(timeout)
     }, [keyword])
 
+    const addToFavoritesHandler = (movie) => {
+        let existingMovies = JSON.parse(localStorage.getItem('movie'))
+        if(existingMovies === null) existingMovies = []
+        existingMovies.push(movie)
+        localStorage.setItem('movie', JSON.stringify(existingMovies))
+    }
+
     return (
         <>
             {
@@ -55,6 +62,7 @@ const MoviesList = () => {
                             return (
                                 <Col key={movie.id} sm={4} md={6} lg={4}>
                                     <CardListItem movie={movie} />
+                                    <button onClick={() => addToFavoritesHandler(movie)}>Add to Favorites</button>
                                 </Col>
                             )
                         })
